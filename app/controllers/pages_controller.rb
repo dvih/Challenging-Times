@@ -6,5 +6,6 @@ class PagesController < ApplicationController
   end
 
   def lizards
+    @lizard_count = params[:number].to_i
   end
 end
