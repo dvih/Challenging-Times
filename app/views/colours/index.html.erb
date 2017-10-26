@@ -1,50 +1,7 @@
-<style>
-body {
-  background-color: #000;
-}
+<%= render 'common/colours' %>
 
-table, th, td {
-   border: 1px solid #000;
-}
-
-table {
-  margin-left: 30%;
-}
-
-th {
-  background-color: #CCC;
-  font-weight: bold;
-  font-size: 30px;
-  padding: 10px 10px 10px 10px;
-}
-
-td {
-  color:white;
-  font-size: 25px;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;
-  font-family: sans-serif;
-  padding: 10px 10px 10px 10px;
-}
-
-h1 {
-  width:100%;
-  font-weight: bold;
-  color:#FFF;
-  text-align: center;
-  font-family: sans-serif;
-}
-
-ul {
-  background-color: #FFF;
-}
-
-</style>
 <body>
-<h1>Colour Pairs in Two Different Formats!</h1>
+<h2>Colour Pairs in Two Different Formats!</h2>
 <p>
   <table>
     <tr>
@@ -55,8 +12,8 @@ ul {
     <% @colours.each do |colour| %>
       <tr>
 		<td><%= colour.id %></td>
-        <td style="background-color: <%= colour.name %>;"><%= colour.name %></td>
-        <td style="background-color: <%= colour.hex %>;"><%= colour.hex %></td>
+        <td style="background-color: <%= colour.name %>;"><%= link_to colour.name, colour_path(colour.id) %></td>
+        <td style="background-color: <%= colour.hex %>;"><%= link_to colour.hex, colour_path(colour.id) %></td>
       </tr>
     <% end %>
   </table>

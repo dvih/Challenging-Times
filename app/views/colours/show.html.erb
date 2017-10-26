@@ -1,8 +1,17 @@
-<h1>Colours#index</h1>
+<%= render 'common/colours' %>
+
+<h2>Colour <%= @colour.id %></h2>
 <p>
-  <ul>
-  <% @colours.each do |colour| %>
-    <li><% colour.name %> | <% colour.hex %> </li>
-  <% end %>
-  <ul>
+  <table>
+    <tr>
+	  <th>ID</th>
+      <th>First Colour (name)</th>
+      <th>Second Colour (hex)</th>
+    </tr>
+    <tr>
+		<td><%= @colour.id %></td>
+    <td style="background-color: <%= @colour.name %>;"><%= @colour.name %></td>
+    <td style="background-color: <%= @colour.hex %>;"><%= @colour.hex %></td>
+    </tr>
+  </table>
 </p>
